@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#e23e7a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Your Little Phone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--
+  This file is only the "skeleton" of the phone.
+  You do NOT need to edit it. All your personal content lives in script.js (giftData).
+-->
+
+<main class="phone" id="phone" data-bar="light" data-layer="" aria-label="Your Little Phone">
+
+  <!-- Wallpaper (set from giftData.wallpaper) -->
+  <div class="wallpaper" id="wallpaper" aria-hidden="true"></div>
+
+  <!-- Fictional status bar -->
+  <div class="status-bar">
+    <span class="status-time" id="statusTime">9:41</span>
+    <span class="status-icons">
+      <svg viewBox="0 0 18 12" width="18" height="12" fill="currentColor" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+      <svg viewBox="0 0 16 12" width="16" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M1.5 4.2a9.5 9.5 0 0 1 13 0"/><path d="M4 7a6 6 0 0 1 8 0"/><circle cx="8" cy="10" r="1.2" fill="currentColor" stroke="none"/></svg>
+      <button class="status-battery" id="batteryBtn" type="button" aria-label="Battery">
+        <svg viewBox="0 0 27 13" width="27" height="13" aria-hidden="true"><rect x=".5" y=".5" width="22" height="12" rx="3.5" fill="none" stroke="currentColor" opacity=".5"/><rect x="2" y="2" width="19" height="9" rx="2" fill="currentColor"/><path d="M24.5 4.5v4c1-.3 1.8-1.1 1.8-2s-.8-1.7-1.8-2z" fill="currentColor" opacity=".5"/></svg>
+      </button>
+    </span>
+  </div>
+
+  <!-- LOCK SCREEN -->
+  <section class="screen lock is-active" id="lockScreen" aria-label="Lock screen">
+    <div class="lock-top">
+      <p class="lock-date" id="lockDate"></p>
+      <h1 class="lock-time" id="lockTime">9:41</h1>
+      <p class="lock-greeting" id="lockGreeting"></p>
+    </div>
+    <button class="notif glass" id="lockNotif" type="button">
+      <span class="notif-icon" aria-hidden="true">💬</span>
+      <span class="notif-text">
+        <strong id="notifTitle"></strong>
+        <span id="notifText"></span>
+      </span>
+    </button>
+    <button class="unlock-btn" id="unlockBtn" type="button">Tap to unlock</button>
+  </section>
+
+  <!-- HOME SCREEN -->
+  <section class="screen home" id="homeScreen" aria-label="Home screen" inert>
+    <div class="home-inner">
+      <div class="widget glass" id="homeWidget"></div>
+      <nav class="app-grid" id="appGrid" aria-label="Apps"></nav>
+      <div class="progress-card glass" id="homeProgress"></div>
+    </div>
+  </section>
+
+  <!-- APP SCREEN (all apps render into #appBody) -->
+  <section class="screen app" id="appScreen" aria-labelledby="appTitle" inert>
+    <header class="app-header">
+      <button class="back-btn" id="backBtn" type="button" aria-label="Back">
+        <svg viewBox="0 0 12 20" width="12" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2L2 10l8 8"/></svg>
+        <span id="backLabel">Home</span>
+      </button>
+      <h2 class="app-title" id="appTitle"></h2>
+      <span class="header-spacer" aria-hidden="true"></span>
+    </header>
+    <div class="app-body" id="appBody"></div>
+    <div class="app-safe" aria-hidden="true"></div>
+  </section>
+
+  <!-- PHOTO VIEWER -->
+  <section class="screen viewer" id="viewerScreen" role="dialog" aria-modal="true" aria-label="Photo viewer" inert>
+    <button class="viewer-close" id="viewerClose" type="button" aria-label="Close photo">✕</button>
+    <div id="viewerBody"></div>
+  </section>
+
+  <!-- SECRET ROOM -->
+  <section class="screen secret-room" id="secretRoom" aria-label="Secret room" inert></section>
+
+  <!-- MEMORY POP-UP -->
+  <div class="screen modal" id="modal" role="dialog" aria-modal="true" aria-label="Hidden memory" inert>
+    <div class="modal-card" id="modalCard"></div>
+  </div>
+
+  <!-- Home indicator (tap to go home, like a real phone) -->
+  <button class="home-bar" id="homeBar" type="button" aria-label="Go to home screen"><span></span></button>
+
+  <!-- Small notification pill -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

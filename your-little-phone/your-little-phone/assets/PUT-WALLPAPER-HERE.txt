@@ -1,0 +1,1 @@
+Save your wallpaper in the assets folder as wallpaper.jpg (portrait image).

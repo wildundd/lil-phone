@@ -1,0 +1,2 @@
+Put your cover images and .mp3 files here.
+(Then set the paths in giftData.music in script.js)
